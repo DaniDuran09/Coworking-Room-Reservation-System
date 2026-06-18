@@ -22,7 +22,7 @@ export class RoomController {
     getRooms = (req: Request, res: Response) => {
         this.roomService
             .getRooms()
-            .then((rooms) => res.json(rooms))
+            .then((rooms) => res.status(200).json(rooms))
             .catch((err) => res.status(404).json({ error: err.message }))
     };
 
